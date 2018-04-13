@@ -1,0 +1,14 @@
+//div= user.username
+//div= user.age
+//div= user.email
+
+div.indUser
+    //each user in [{"username":"john"},{"username":"bob"}]
+    each user in users
+        div
+            p=user.id
+            p=user.username
+            p=user.email
+            p=user.age
+            a edit
+            a delete

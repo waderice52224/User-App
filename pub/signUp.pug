@@ -1,0 +1,23 @@
+head
+
+
+body
+    form(action='/signUp' method='post')
+        div
+            label(for='username') Username
+            input#username(name="username")
+        div
+            label(for='password') Password
+            input#password(type='password' name="password")
+        div
+            label(for='confPassword') Confirm Password
+            input#confPassword(type='password' name="confPassword")
+        div
+            label(for='emailaddress') Email Address
+            input#emailaddress(name="emailaddress")
+        div
+            label(for='age') Age
+            input#age(name="age")
+
+        input(type="submit" value='submit')
+

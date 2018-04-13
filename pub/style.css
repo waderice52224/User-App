@@ -1,0 +1,49 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #dddddd;
+}
+
+/*login or sign up*/
+.wrapperLIOS{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 50%;
+    height: auto;
+    background-color: aquamarine;
+}
+.loginOrSignUp{
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+}
+.loginB{
+    background-color: blueviolet;
+    border: solid 1px #ffffff;
+    border-radius: 25%;
+    height: 10%;
+    width: 20%;
+
+
+}
+.signUpB{
+    background-color: blueviolet;
+    border: solid 1px #ffffff;
+    border-radius: 25%;
+    height: 10%;
+    width: 20%;
+}
+/*users*/
+.userRapper{
+    border: 1px solid #111111;
+}
+.indUser{
+    border: solid 3px #111111;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*background-color: blueviolet;*/
+}
