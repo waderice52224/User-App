@@ -27,6 +27,8 @@ body{
     border-radius: 25%;
     height: 10%;
     width: 20%;
+    font-size: 40px;
+    text-decoration: none;
 
 
 }
@@ -36,6 +38,8 @@ body{
     border-radius: 25%;
     height: 10%;
     width: 20%;
+    font-size: 40px;
+    text-decoration: none;
 }
 /*users*/
 .userRapper{
@@ -45,5 +49,5 @@ body{
     border: solid 3px #111111;
     /*display: flex;*/
     /*justify-content: center;*/
-    /*background-color: blueviolet;*/
+    background-color: #ffffff;
 }

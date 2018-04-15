@@ -2,13 +2,17 @@
 //div= user.age
 //div= user.email
 
-div.indUser
+div
     //each user in [{"username":"john"},{"username":"bob"}]
     each user in users
-        div
-            p=user.id
-            p=user.username
-            p=user.email
-            p=user.age
-            a edit
-            a delete
+        div.indUser
+            p UserId:
+                span=user.id
+            p User Name:
+                span=user.username
+            p Email:
+                span=user.email
+            p Age:
+                span=user.age
+            a(href="/editUser/:id") Edit
+

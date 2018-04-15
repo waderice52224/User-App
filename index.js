@@ -35,7 +35,18 @@ app.get('/signUp', (req, res) => {
 app.get('/users', (req, res) => {
     res.render('users');
 });
-var i = 0;
+app.get('/editUser/:id', (req, res) => {
+    // console.log(users.user.id);
+    res.render('edit', user.id);
+    res.render('edit');
+});
+
+app.get('/delete/id', (req, res) => {
+
+});
+
+var i = 1;
+
 app.post('/signUp', (req, res) => {
     user = {
         username: req.body.username,
