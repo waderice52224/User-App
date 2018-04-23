@@ -1,4 +1,23 @@
-div Welcome to the unfinished user edit
-//a(href=/delete/user.id) delete
+head
+    style
+        include style.css
 
-p=user.id
+
+    div
+    form(action='/signUp' method='post')
+        div.centerMe
+            label( for='idVal') User Id:
+            input#idVal( value= editedUser.id)
+        div.centerMe
+            label( for='usernameVal') Username:
+            input#usernameVal( value= editedUser.username)
+        div.centerMe
+            label( for='emailVal') User Email:
+            input#emailVal( value= editedUser.email)
+        div.centerMe
+            label( for='passwordVal') User Password:
+            input#passwordVal( value= editedUser.password)
+        div.centerMe
+            label( for='ageVal') User age:
+            input#ageVal( value= editedUser.age)
+        input(type="submit" value='submit')

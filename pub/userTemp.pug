@@ -4,7 +4,7 @@
 
 div
     //each user in [{"username":"john"},{"username":"bob"}]
-    each user in users
+    each user in userInfo
         div.indUser
             p UserId:
                 span=user.id
@@ -14,5 +14,5 @@ div
                 span=user.email
             p Age:
                 span=user.age
-            a(href="/editUser/:id") Edit
+            a(href="/edit/" + user.id) Edit
 

@@ -51,3 +51,19 @@ body{
     /*justify-content: center;*/
     background-color: #ffffff;
 }
+.editerDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 40%;
+}
+.centerMe{
+    margin-right: auto;
+    margin-left: auto;
+}
+#idVal{
+    width: auto;
+}
+#usernameVal{
+    width: auto;
+}

@@ -35,17 +35,30 @@ app.get('/signUp', (req, res) => {
 app.get('/users', (req, res) => {
     res.render('users');
 });
-app.get('/editUser/:id', (req, res) => {
-    // console.log(users.user.id);
-    res.render('edit', user.id);
-    res.render('edit');
+
+app.get('/edit/:id', (req, res) => {
+    console.log(('req param' + req.params.id));
+
+    var userINF;
+    console.log('here ' + users.length);
+    for(let i =0; i < users.length; i++){
+        console.log('users i::' + users[i].id);
+        if(+users[i].id === +req.params.id){
+            console.log('match');
+            userINF = users[i];
+            res.render('edit', {editedUser: userINF});
+        }
+
+
+    }
+
 });
 
 app.get('/delete/id', (req, res) => {
 
 });
 
-var i = 1;
+var r = 1;
 
 app.post('/signUp', (req, res) => {
     user = {
@@ -53,13 +66,27 @@ app.post('/signUp', (req, res) => {
         password: req.body.password,
         email: req.body.emailaddress,
         age: req.body.age,
-        id: i
+        id: r
     };
     users.push(user);
     console.log(user);
-    res.render('./users', {users:users});
-    i++;
+    res.render('./users', {userInfo:users});
+    r++;
 });
+// app.post('/editsend', (req, res) => {
+//     user = {
+//         username: req.body.username,
+//         password: req.body.password,
+//         email: req.body.emailaddress,
+//         age: req.body.age,
+//         id: req.body.id
+//     };
+//     users.push(user);
+//     console.log(user);
+//     res.render('./users', {userInfo:users});
+//     r++;
+// });
+
 
 // const users = [
 //     {id: 1, username: 'ben', password: 'abc', email: 'ben@example.com'}
