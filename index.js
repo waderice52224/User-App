@@ -54,9 +54,7 @@ app.get('/edit/:id', (req, res) => {
 
 });
 
-app.get('/delete/id', (req, res) => {
 
-});
 
 var r = 1;
 
@@ -73,21 +71,34 @@ app.post('/signUp', (req, res) => {
     res.render('./users', {userInfo:users});
     r++;
 });
-// app.post('/editsend', (req, res) => {
-//     user = {
-//         username: req.body.username,
-//         password: req.body.password,
-//         email: req.body.emailaddress,
-//         age: req.body.age,
-//         id: req.body.id
-//     };
-//     users.push(user);
-//     console.log(user);
-//     res.render('./users', {userInfo:users});
-//     r++;
-// });
+
+app.post('/editUser', (req, res) => {
+
+    console.log('req.body', req.body);
 
 
+    let existingUser = users.filter(user => user.id == req.body.id)[0];
+    existingUser.username =req.body.username;
+    existingUser.id =req.body.id;
+    existingUser.email =req.body.email;
+    existingUser.password =req.body.password;
+    existingUser.age =req.body.age;
+    // existingUser = {
+    //     username: req.body.username,
+    //     password: req.body.password,
+    //     email: req.body.emailaddress,
+    //     age: req.body.age,
+    //     id: req.body.id
+    // };
+    console.log('existingUser', existingUser);
+    res.render('./users', {userInfo:users});
+});
+
+app.post('/delete/:id', (req, res) => {
+    let existingUser = users.filter(user => user.id == req.body.id)[0];
+    console.log('boi', existingUser);
+    res.render('./users', {userInfo:users});
+});
 // const users = [
 //     {id: 1, username: 'ben', password: 'abc', email: 'ben@example.com'}
 //     , {id: 2, username: 'bob', password: '123', email: 'bob@example.com'}

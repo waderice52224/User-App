@@ -4,20 +4,21 @@ head
 
 
     div
-    form(action='/signUp' method='post')
+    form(action='/editUser' method='post')
         div.centerMe
             label( for='idVal') User Id:
-            input#idVal( value= editedUser.id)
+            input#idVal(name='id' value= editedUser.id)
         div.centerMe
             label( for='usernameVal') Username:
-            input#usernameVal( value= editedUser.username)
+            input#usernameVal(name='username' value= editedUser.username)
         div.centerMe
             label( for='emailVal') User Email:
-            input#emailVal( value= editedUser.email)
+            input#emailVal(name='email' value= editedUser.email)
         div.centerMe
             label( for='passwordVal') User Password:
-            input#passwordVal( value= editedUser.password)
+            input#passwordVal(name='password' value= editedUser.password)
         div.centerMe
             label( for='ageVal') User age:
-            input#ageVal( value= editedUser.age)
+            input#ageVal(name='age' value= editedUser.age)
         input(type="submit" value='submit')
+        a(href='/delete/' + editedUser.id) Delete
