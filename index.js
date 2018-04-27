@@ -94,8 +94,9 @@ app.post('/editUser', (req, res) => {
     res.render('./users', {userInfo:users});
 });
 
-app.post('/delete/:id', (req, res) => {
-    let existingUser = users.filter(user => user.id == req.body.id)[0];
+app.get('/delete/:id', (req, res) => {
+    let existingUser = users.filter(user => user.id == req.params.id)[0];
+    users.splice(users.indexOf(existingUser), 1);
     console.log('boi', existingUser);
     res.render('./users', {userInfo:users});
 });
