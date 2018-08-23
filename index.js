@@ -94,11 +94,13 @@ db.once('open', () => {
     app.get('/edit/:id', (req, res) => {
         console.log(('req param' + req.params.id));
 
-
-        user.find({user_id: req.params.id}, (editedUser) => {
-
-            res.render('edit', {editedUser: editedUser});
+        var editedUser = user.find({userId: req.params.id});
+        console.log(req.params.id);
+        user.find({_id: req.params.id}, (err, editedUser) => {
             console.log(editedUser);
+            console.log(err);
+            res.render('edit', {editedUser: editedUser});
+
 
 
 
@@ -132,9 +134,8 @@ db.once('open', () => {
         console.log('req.body', req.body);
 
 
-        let existingUser = users.filter(user => user.id == req.body.id)[0];
+        let existingUser = users.find(user => user.id == req.body.id)[0];
         existingUser.username = req.body.username;
-        existingUser.id = req.body.id;
         existingUser.email = req.body.email;
         existingUser.password = req.body.password;
         existingUser.age = req.body.age;
